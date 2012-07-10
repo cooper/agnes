@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A79537E915ABCFF50068B0DF /* Agnes.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537CA15ABCFF50068B0DF /* Agnes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537EA15ABCFF50068B0DF /* AgnesChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537CB15ABCFF50068B0DF /* AgnesChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537EB15ABCFF50068B0DF /* AgnesChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537CC15ABCFF50068B0DF /* AgnesChannel.m */; };
+		A79537EC15ABCFF50068B0DF /* AgnesCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537CD15ABCFF50068B0DF /* AgnesCommands.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537ED15ABCFF50068B0DF /* AgnesCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537CE15ABCFF50068B0DF /* AgnesCommands.m */; };
+		A79537EE15ABCFF50068B0DF /* AgnesConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537CF15ABCFF50068B0DF /* AgnesConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537EF15ABCFF50068B0DF /* AgnesConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537D015ABCFF50068B0DF /* AgnesConnection.m */; };
+		A79537F015ABCFF50068B0DF /* AgnesConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D115ABCFF50068B0DF /* AgnesConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537F115ABCFF50068B0DF /* AgnesCore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A79537D215ABCFF50068B0DF /* AgnesCore-Info.plist */; };
+		A79537F215ABCFF50068B0DF /* AgnesCore-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A79537D315ABCFF50068B0DF /* AgnesCore-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537F315ABCFF50068B0DF /* AgnesCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D415ABCFF50068B0DF /* AgnesCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537F415ABCFF50068B0DF /* AgnesCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537D515ABCFF50068B0DF /* AgnesCore.m */; };
+		A79537F515ABCFF50068B0DF /* AgnesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D615ABCFF50068B0DF /* AgnesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537F615ABCFF50068B0DF /* AgnesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537D715ABCFF50068B0DF /* AgnesManager.m */; };
+		A79537F715ABCFF50068B0DF /* AgnesManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D815ABCFF50068B0DF /* AgnesManagerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537F815ABCFF50068B0DF /* AgnesParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D915ABCFF50068B0DF /* AgnesParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537F915ABCFF50068B0DF /* AgnesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537DA15ABCFF50068B0DF /* AgnesParser.m */; };
+		A79537FA15ABCFF50068B0DF /* AgnesParserCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537DB15ABCFF50068B0DF /* AgnesParserCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537FB15ABCFF50068B0DF /* AgnesParserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537DC15ABCFF50068B0DF /* AgnesParserCommand.m */; };
+		A79537FC15ABCFF50068B0DF /* AgnesSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537DD15ABCFF50068B0DF /* AgnesSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537FD15ABCFF50068B0DF /* AgnesSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537DE15ABCFF50068B0DF /* AgnesSocket.m */; };
+		A79537FE15ABCFF50068B0DF /* AgnesUser.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537DF15ABCFF50068B0DF /* AgnesUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79537FF15ABCFF50068B0DF /* AgnesUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537E015ABCFF50068B0DF /* AgnesUser.m */; };
+		A795380015ABCFF50068B0DF /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537E215ABCFF50068B0DF /* AsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A795380115ABCFF50068B0DF /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537E315ABCFF50068B0DF /* AsyncSocket.m */; };
+		A795380215ABCFF50068B0DF /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537E415ABCFF50068B0DF /* AsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A795380315ABCFF50068B0DF /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537E515ABCFF50068B0DF /* AsyncUdpSocket.m */; };
+		A7FDC28E15ABCF1600E8BC6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FDC28D15ABCF1600E8BC6E /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A79537CA15ABCFF50068B0DF /* Agnes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agnes.h; path = Agnes/Agnes.h; sourceTree = "<group>"; };
+		A79537CB15ABCFF50068B0DF /* AgnesChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesChannel.h; path = Agnes/AgnesChannel.h; sourceTree = "<group>"; };
+		A79537CC15ABCFF50068B0DF /* AgnesChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesChannel.m; path = Agnes/AgnesChannel.m; sourceTree = "<group>"; };
+		A79537CD15ABCFF50068B0DF /* AgnesCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesCommands.h; path = Agnes/AgnesCommands.h; sourceTree = "<group>"; };
+		A79537CE15ABCFF50068B0DF /* AgnesCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesCommands.m; path = Agnes/AgnesCommands.m; sourceTree = "<group>"; };
+		A79537CF15ABCFF50068B0DF /* AgnesConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesConnection.h; path = Agnes/AgnesConnection.h; sourceTree = "<group>"; };
+		A79537D015ABCFF50068B0DF /* AgnesConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesConnection.m; path = Agnes/AgnesConnection.m; sourceTree = "<group>"; };
+		A79537D115ABCFF50068B0DF /* AgnesConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesConnectionDelegate.h; path = Agnes/AgnesConnectionDelegate.h; sourceTree = "<group>"; };
+		A79537D215ABCFF50068B0DF /* AgnesCore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AgnesCore-Info.plist"; path = "Agnes/AgnesCore-Info.plist"; sourceTree = "<group>"; };
+		A79537D315ABCFF50068B0DF /* AgnesCore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AgnesCore-Prefix.pch"; path = "Agnes/AgnesCore-Prefix.pch"; sourceTree = "<group>"; };
+		A79537D415ABCFF50068B0DF /* AgnesCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesCore.h; path = Agnes/AgnesCore.h; sourceTree = "<group>"; };
+		A79537D515ABCFF50068B0DF /* AgnesCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesCore.m; path = Agnes/AgnesCore.m; sourceTree = "<group>"; };
+		A79537D615ABCFF50068B0DF /* AgnesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesManager.h; path = Agnes/AgnesManager.h; sourceTree = "<group>"; };
+		A79537D715ABCFF50068B0DF /* AgnesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesManager.m; path = Agnes/AgnesManager.m; sourceTree = "<group>"; };
+		A79537D815ABCFF50068B0DF /* AgnesManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesManagerDelegate.h; path = Agnes/AgnesManagerDelegate.h; sourceTree = "<group>"; };
+		A79537D915ABCFF50068B0DF /* AgnesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesParser.h; path = Agnes/AgnesParser.h; sourceTree = "<group>"; };
+		A79537DA15ABCFF50068B0DF /* AgnesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesParser.m; path = Agnes/AgnesParser.m; sourceTree = "<group>"; };
+		A79537DB15ABCFF50068B0DF /* AgnesParserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesParserCommand.h; path = Agnes/AgnesParserCommand.h; sourceTree = "<group>"; };
+		A79537DC15ABCFF50068B0DF /* AgnesParserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesParserCommand.m; path = Agnes/AgnesParserCommand.m; sourceTree = "<group>"; };
+		A79537DD15ABCFF50068B0DF /* AgnesSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesSocket.h; path = Agnes/AgnesSocket.h; sourceTree = "<group>"; };
+		A79537DE15ABCFF50068B0DF /* AgnesSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesSocket.m; path = Agnes/AgnesSocket.m; sourceTree = "<group>"; };
+		A79537DF15ABCFF50068B0DF /* AgnesUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesUser.h; path = Agnes/AgnesUser.h; sourceTree = "<group>"; };
+		A79537E015ABCFF50068B0DF /* AgnesUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesUser.m; path = Agnes/AgnesUser.m; sourceTree = "<group>"; };
+		A79537E215ABCFF50068B0DF /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		A79537E315ABCFF50068B0DF /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		A79537E415ABCFF50068B0DF /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		A79537E515ABCFF50068B0DF /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		A7FDC28A15ABCF1600E8BC6E /* Agnes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Agnes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FDC28D15ABCF1600E8BC6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A7FDC29015ABCF1600E8BC6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A7FDC29115ABCF1600E8BC6E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A7FDC29215ABCF1600E8BC6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7FDC28615ABCF1600E8BC6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7FDC28E15ABCF1600E8BC6E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A79537E115ABCFF50068B0DF /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				A79537E215ABCFF50068B0DF /* AsyncSocket.h */,
+				A79537E315ABCFF50068B0DF /* AsyncSocket.m */,
+				A79537E415ABCFF50068B0DF /* AsyncUdpSocket.h */,
+				A79537E515ABCFF50068B0DF /* AsyncUdpSocket.m */,
+			);
+			name = Async;
+			path = Agnes/Async;
+			sourceTree = "<group>";
+		};
+		A7BDBE3A15ABDA1D008A8666 /* Agnes */ = {
+			isa = PBXGroup;
+			children = (
+				A79537CA15ABCFF50068B0DF /* Agnes.h */,
+				A79537CB15ABCFF50068B0DF /* AgnesChannel.h */,
+				A79537CC15ABCFF50068B0DF /* AgnesChannel.m */,
+				A79537CD15ABCFF50068B0DF /* AgnesCommands.h */,
+				A79537CE15ABCFF50068B0DF /* AgnesCommands.m */,
+				A79537CF15ABCFF50068B0DF /* AgnesConnection.h */,
+				A79537D015ABCFF50068B0DF /* AgnesConnection.m */,
+				A79537D115ABCFF50068B0DF /* AgnesConnectionDelegate.h */,
+				A79537D215ABCFF50068B0DF /* AgnesCore-Info.plist */,
+				A79537D315ABCFF50068B0DF /* AgnesCore-Prefix.pch */,
+				A79537D415ABCFF50068B0DF /* AgnesCore.h */,
+				A79537D515ABCFF50068B0DF /* AgnesCore.m */,
+				A79537D615ABCFF50068B0DF /* AgnesManager.h */,
+				A79537D715ABCFF50068B0DF /* AgnesManager.m */,
+				A79537D815ABCFF50068B0DF /* AgnesManagerDelegate.h */,
+				A79537D915ABCFF50068B0DF /* AgnesParser.h */,
+				A79537DA15ABCFF50068B0DF /* AgnesParser.m */,
+				A79537DB15ABCFF50068B0DF /* AgnesParserCommand.h */,
+				A79537DC15ABCFF50068B0DF /* AgnesParserCommand.m */,
+				A79537DD15ABCFF50068B0DF /* AgnesSocket.h */,
+				A79537DE15ABCFF50068B0DF /* AgnesSocket.m */,
+				A79537DF15ABCFF50068B0DF /* AgnesUser.h */,
+				A79537E015ABCFF50068B0DF /* AgnesUser.m */,
+				A79537E115ABCFF50068B0DF /* Async */,
+			);
+			name = Agnes;
+			sourceTree = "<group>";
+		};
+		A7FDC27E15ABCF1600E8BC6E = {
+			isa = PBXGroup;
+			children = (
+				A7BDBE3A15ABDA1D008A8666 /* Agnes */,
+				A7FDC28C15ABCF1600E8BC6E /* Frameworks */,
+				A7FDC28B15ABCF1600E8BC6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7FDC28B15ABCF1600E8BC6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDC28A15ABCF1600E8BC6E /* Agnes.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7FDC28C15ABCF1600E8BC6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDC28D15ABCF1600E8BC6E /* Cocoa.framework */,
+				A7FDC28F15ABCF1600E8BC6E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7FDC28F15ABCF1600E8BC6E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDC29015ABCF1600E8BC6E /* AppKit.framework */,
+				A7FDC29115ABCF1600E8BC6E /* CoreData.framework */,
+				A7FDC29215ABCF1600E8BC6E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A7FDC28715ABCF1600E8BC6E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79537E915ABCFF50068B0DF /* Agnes.h in Headers */,
+				A79537EA15ABCFF50068B0DF /* AgnesChannel.h in Headers */,
+				A79537EC15ABCFF50068B0DF /* AgnesCommands.h in Headers */,
+				A79537EE15ABCFF50068B0DF /* AgnesConnection.h in Headers */,
+				A79537F015ABCFF50068B0DF /* AgnesConnectionDelegate.h in Headers */,
+				A79537F215ABCFF50068B0DF /* AgnesCore-Prefix.pch in Headers */,
+				A79537F315ABCFF50068B0DF /* AgnesCore.h in Headers */,
+				A79537F515ABCFF50068B0DF /* AgnesManager.h in Headers */,
+				A79537F715ABCFF50068B0DF /* AgnesManagerDelegate.h in Headers */,
+				A79537F815ABCFF50068B0DF /* AgnesParser.h in Headers */,
+				A79537FA15ABCFF50068B0DF /* AgnesParserCommand.h in Headers */,
+				A79537FC15ABCFF50068B0DF /* AgnesSocket.h in Headers */,
+				A79537FE15ABCFF50068B0DF /* AgnesUser.h in Headers */,
+				A795380015ABCFF50068B0DF /* AsyncSocket.h in Headers */,
+				A795380215ABCFF50068B0DF /* AsyncUdpSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A7FDC28915ABCF1600E8BC6E /* Agnes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7FDC29F15ABCF1600E8BC6E /* Build configuration list for PBXNativeTarget "Agnes" */;
+			buildPhases = (
+				A7FDC28515ABCF1600E8BC6E /* Sources */,
+				A7FDC28615ABCF1600E8BC6E /* Frameworks */,
+				A7FDC28715ABCF1600E8BC6E /* Headers */,
+				A7FDC28815ABCF1600E8BC6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Agnes;
+			productName = Agnes;
+			productReference = A7FDC28A15ABCF1600E8BC6E /* Agnes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7FDC28015ABCF1600E8BC6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = A7FDC28315ABCF1600E8BC6E /* Build configuration list for PBXProject "Agnes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A7FDC27E15ABCF1600E8BC6E;
+			productRefGroup = A7FDC28B15ABCF1600E8BC6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7FDC28915ABCF1600E8BC6E /* Agnes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7FDC28815ABCF1600E8BC6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79537F115ABCFF50068B0DF /* AgnesCore-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7FDC28515ABCF1600E8BC6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79537EB15ABCFF50068B0DF /* AgnesChannel.m in Sources */,
+				A79537ED15ABCFF50068B0DF /* AgnesCommands.m in Sources */,
+				A79537EF15ABCFF50068B0DF /* AgnesConnection.m in Sources */,
+				A79537F415ABCFF50068B0DF /* AgnesCore.m in Sources */,
+				A79537F615ABCFF50068B0DF /* AgnesManager.m in Sources */,
+				A79537F915ABCFF50068B0DF /* AgnesParser.m in Sources */,
+				A79537FB15ABCFF50068B0DF /* AgnesParserCommand.m in Sources */,
+				A79537FD15ABCFF50068B0DF /* AgnesSocket.m in Sources */,
+				A79537FF15ABCFF50068B0DF /* AgnesUser.m in Sources */,
+				A795380115ABCFF50068B0DF /* AsyncSocket.m in Sources */,
+				A795380315ABCFF50068B0DF /* AsyncUdpSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A7FDC29D15ABCF1600E8BC6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A7FDC29E15ABCF1600E8BC6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A7FDC2A015ABCF1600E8BC6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Agnes/Agnes-Prefix.pch";
+				INFOPLIST_FILE = "Agnes/Agnes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		A7FDC2A115ABCF1600E8BC6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Agnes/Agnes-Prefix.pch";
+				INFOPLIST_FILE = "Agnes/Agnes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7FDC28315ABCF1600E8BC6E /* Build configuration list for PBXProject "Agnes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7FDC29D15ABCF1600E8BC6E /* Debug */,
+				A7FDC29E15ABCF1600E8BC6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7FDC29F15ABCF1600E8BC6E /* Build configuration list for PBXNativeTarget "Agnes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7FDC2A015ABCF1600E8BC6E /* Debug */,
+				A7FDC2A115ABCF1600E8BC6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7FDC28015ABCF1600E8BC6E /* Project object */;
+}
