@@ -14,8 +14,6 @@
 #import "AgnesConnection.h"
 #import "AgnesUser.h"
 
-@class AgnesManager;
-
 @interface AgnesManager : NSObject {
     NSMutableDictionary *connectionDict;
 }

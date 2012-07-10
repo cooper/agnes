@@ -12,6 +12,6 @@
 
 @implementation AgnesUser
 
-@synthesize uid, connection, realname, nickname, username, hostname, cloak;
+@synthesize session, uid, connection, realname, nickname, username, hostname, cloak;
 
 @end

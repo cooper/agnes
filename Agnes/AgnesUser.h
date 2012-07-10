@@ -21,5 +21,6 @@
 @property NSString *cloak;
 @property int uid;
 @property id connection;
+@property id session;
 
 @end

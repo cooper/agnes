@@ -15,8 +15,6 @@
 		A79537EE15ABCFF50068B0DF /* AgnesConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537CF15ABCFF50068B0DF /* AgnesConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A79537EF15ABCFF50068B0DF /* AgnesConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537D015ABCFF50068B0DF /* AgnesConnection.m */; };
 		A79537F015ABCFF50068B0DF /* AgnesConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D115ABCFF50068B0DF /* AgnesConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A79537F115ABCFF50068B0DF /* AgnesCore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A79537D215ABCFF50068B0DF /* AgnesCore-Info.plist */; };
-		A79537F215ABCFF50068B0DF /* AgnesCore-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A79537D315ABCFF50068B0DF /* AgnesCore-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		A79537F315ABCFF50068B0DF /* AgnesCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D415ABCFF50068B0DF /* AgnesCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A79537F415ABCFF50068B0DF /* AgnesCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A79537D515ABCFF50068B0DF /* AgnesCore.m */; };
 		A79537F515ABCFF50068B0DF /* AgnesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A79537D615ABCFF50068B0DF /* AgnesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,8 +44,6 @@
 		A79537CF15ABCFF50068B0DF /* AgnesConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesConnection.h; path = Agnes/AgnesConnection.h; sourceTree = "<group>"; };
 		A79537D015ABCFF50068B0DF /* AgnesConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesConnection.m; path = Agnes/AgnesConnection.m; sourceTree = "<group>"; };
 		A79537D115ABCFF50068B0DF /* AgnesConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesConnectionDelegate.h; path = Agnes/AgnesConnectionDelegate.h; sourceTree = "<group>"; };
-		A79537D215ABCFF50068B0DF /* AgnesCore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AgnesCore-Info.plist"; path = "Agnes/AgnesCore-Info.plist"; sourceTree = "<group>"; };
-		A79537D315ABCFF50068B0DF /* AgnesCore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AgnesCore-Prefix.pch"; path = "Agnes/AgnesCore-Prefix.pch"; sourceTree = "<group>"; };
 		A79537D415ABCFF50068B0DF /* AgnesCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesCore.h; path = Agnes/AgnesCore.h; sourceTree = "<group>"; };
 		A79537D515ABCFF50068B0DF /* AgnesCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgnesCore.m; path = Agnes/AgnesCore.m; sourceTree = "<group>"; };
 		A79537D615ABCFF50068B0DF /* AgnesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgnesManager.h; path = Agnes/AgnesManager.h; sourceTree = "<group>"; };
@@ -107,8 +103,6 @@
 				A79537CF15ABCFF50068B0DF /* AgnesConnection.h */,
 				A79537D015ABCFF50068B0DF /* AgnesConnection.m */,
 				A79537D115ABCFF50068B0DF /* AgnesConnectionDelegate.h */,
-				A79537D215ABCFF50068B0DF /* AgnesCore-Info.plist */,
-				A79537D315ABCFF50068B0DF /* AgnesCore-Prefix.pch */,
 				A79537D415ABCFF50068B0DF /* AgnesCore.h */,
 				A79537D515ABCFF50068B0DF /* AgnesCore.m */,
 				A79537D615ABCFF50068B0DF /* AgnesManager.h */,
@@ -175,7 +169,6 @@
 				A79537EC15ABCFF50068B0DF /* AgnesCommands.h in Headers */,
 				A79537EE15ABCFF50068B0DF /* AgnesConnection.h in Headers */,
 				A79537F015ABCFF50068B0DF /* AgnesConnectionDelegate.h in Headers */,
-				A79537F215ABCFF50068B0DF /* AgnesCore-Prefix.pch in Headers */,
 				A79537F315ABCFF50068B0DF /* AgnesCore.h in Headers */,
 				A79537F515ABCFF50068B0DF /* AgnesManager.h in Headers */,
 				A79537F715ABCFF50068B0DF /* AgnesManagerDelegate.h in Headers */,
@@ -239,7 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A79537F115ABCFF50068B0DF /* AgnesCore-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

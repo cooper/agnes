@@ -17,6 +17,7 @@
 @property AgnesConnection *connection;
 @property NSString *name;
 @property (readonly) NSMutableArray *users;
+@property id session;
 
 - (BOOL)hasUser:(AgnesUser *)user;
 

@@ -31,6 +31,7 @@
 @property (assign) NSString *nickname; // note: these are DESIRED values. real values can be fetched
 @property AgnesUser *thisUser;         // from the thisUser AgnesUser property.
 @property id object;
+@property id session;
 
 - (id)initWithDelegate:(id)del;
 - (void)connect;

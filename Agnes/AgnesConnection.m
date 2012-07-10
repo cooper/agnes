@@ -17,7 +17,7 @@
 
 @implementation AgnesConnection
 
-@synthesize ssl, manager, object, delegate, nickname, username, realname, thisUser;
+@synthesize session, ssl, manager, object, delegate, nickname, username, realname, thisUser;
 
 int cuid = 0;
 

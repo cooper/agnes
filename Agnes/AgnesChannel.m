@@ -12,7 +12,7 @@
 
 @implementation AgnesChannel
 
-@synthesize connection, name, users;
+@synthesize session, connection, name, users;
 
 - (BOOL)hasUser:(AgnesUser *)user {
     if ([users containsObject:user])
