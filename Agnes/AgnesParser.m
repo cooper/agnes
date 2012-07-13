@@ -39,6 +39,14 @@
     // huge switch.
     serverResponse command = [AgnesCommands getCommand:[args objectAtIndex:1]];
     switch (command) {
+    
+        case RPL_ISUPPORT:
+            [self handleISUPPORT:cmd];
+            break;
+    
+        case RPL_ENDOFMOTD:
+            [connection sendLine:@"JOIN #k"];
+            break;
             
         case CMD_PRIVMSG:
             // if the target is not myself...
@@ -49,10 +57,6 @@
             [self handlePrivmsg:cmd];
             break;
             
-        case RPL_ENDOFMOTD:
-            [connection sendLine:@"JOIN #k"];
-            break;
-            
         case CMD_NICK:
             [self handleNick:cmd];
             break;
@@ -60,6 +64,11 @@
         default:
             break;
     }
+}
+
+/* RPL_ISUPPORT */
+
+- (void)handleSupport:(serverSupport)name {
 }
 
 /* HANDLERS */
@@ -89,6 +98,18 @@
     NSString *oldnick = cmd.user.nickname;
     [cmd.user setNickname:[cmd last]];
     [connection updateNick:oldnick newNick:[cmd last]];
+}
+
+- (void)handleISUPPORT:(AgnesParserCommand *)cmd {
+    uint8 lastIndex = [[cmd arguments] count] - 1;
+    for (uint8 i = 0; i < lastIndex; i++) {
+        if (i < 3) continue;
+        NSString *item = [cmd nth:i];
+        if ([item rangeOfString:@"="].location == NSNotFound)
+            NSLog(@"no big deal.");
+        else
+            NSLog(@"needs handled.");
+    }
 }
 
 @end

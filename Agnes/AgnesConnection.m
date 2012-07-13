@@ -17,13 +17,14 @@
 
 @implementation AgnesConnection
 
-@synthesize session, ssl, manager, object, delegate, nickname, username, realname, thisUser;
+@synthesize sid, session, ssl, manager, object, delegate, nickname, username, realname, thisUser;
 
-int cuid = 0;
+int cuid = 0, csid = 0;
 
 - (id)initWithDelegate:(id<AgnesConnectionDelegate>)del {
     self = [super init];
     if (self) {
+        sid         = csid++;
         delegate    = del;
         ssl         = false;
         socket      = [[AgnesSocket alloc] initWithDelegate:self];

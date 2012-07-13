@@ -14,10 +14,15 @@
 #import <Foundation/Foundation.h>
 
 typedef enum _serverResponse {
+    RPL_ISUPPORT  = 5,
     RPL_ENDOFMOTD = 374,
     CMD_PRIVMSG,
     CMD_NICK
 } serverResponse;
+
+typedef enum _serverSupport {
+    IS_PREFIX
+} serverSupport;
 
 @interface AgnesCommands : NSObject 
 

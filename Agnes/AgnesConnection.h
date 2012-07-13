@@ -32,6 +32,7 @@
 @property AgnesUser *thisUser;         // from the thisUser AgnesUser property.
 @property id object;
 @property id session;
+@property int sid;
 
 - (id)initWithDelegate:(id)del;
 - (void)connect;
