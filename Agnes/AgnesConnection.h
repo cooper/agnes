@@ -12,11 +12,10 @@
 #import "AgnesSocket.h"
 #import "AgnesConnectionDelegate.h"
 
-@class AgnesParser, AgnesManager, AgnesChannel, AgnesUser;
+@class AgnesManager, AgnesChannel, AgnesUser;
 
 @interface AgnesConnection : NSObject {
     AgnesSocket *socket;
-    AgnesParser *parser;
     NSMutableDictionary *userDict;
     NSMutableDictionary *channelDict;
 }

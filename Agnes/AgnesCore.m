@@ -7,7 +7,12 @@
 //
 
 #import "AgnesCore.h"
+#import "AgnesParser.h"
 
 @implementation AgnesCore
+
++ (void)prepare {
+    [AgnesParser installDefaults];
+}
 
 @end

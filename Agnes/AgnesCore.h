@@ -10,4 +10,6 @@
 
 @interface AgnesCore : NSObject
 
++ (void)prepare;
+
 @end

@@ -11,11 +11,13 @@
 #import <Foundation/Foundation.h>
 #import "AgnesConnection.h"
 
+@class AgnesParserCommand;
+typedef void(^CommandCallback)(AgnesParserCommand *);
+
 @interface AgnesParser : NSObject
 
-@property AgnesConnection *connection;
-
-- (id)initWithConnection:(AgnesConnection *)conn;
-- (void)parseLine:(NSString *)line;
++ (void)installDefaults;
++ (void)parseLine:(NSString *)line connection:(AgnesConnection *)conn;
++ (int)registerCommandHandler:(CommandCallback)callback forCommand:(NSString *)command;
 
 @end

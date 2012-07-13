@@ -12,7 +12,7 @@
 
 @implementation AgnesParserCommand
 
-@synthesize user, channel, dataLine, arguments, realArguments, targetIsMe;
+@synthesize connection, user, channel, dataLine, arguments, realArguments, targetIsMe;
 
 - (id)initWithLine:(NSString *)line {
     self = [super init];

@@ -12,11 +12,14 @@
 #import "AgnesUser.h"
 #import "AgnesChannel.h"
 
+@class AgnesConnection;
+
 @interface AgnesParserCommand : NSObject
 
 @property (readonly) NSString *dataLine;     /* the line of data received from the server */
 @property (readonly) NSArray *realArguments; /* space-separated data, just as from server */
 @property (readonly) NSArray *arguments;     /* parsed as IRC-style arguments             */
+@property AgnesConnection *connection;       /* the connection                            */
 @property AgnesUser *user;                   /* parser will insert an AgnesUser object    */
 @property AgnesChannel *channel;             /* parser will insert an AgnesChannel object */
 @property BOOL targetIsMe;                   /* true if the command is aimed at this user */

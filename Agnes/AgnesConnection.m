@@ -28,7 +28,6 @@ int cuid = 0, csid = 0;
         delegate    = del;
         ssl         = false;
         socket      = [[AgnesSocket alloc] initWithDelegate:self];
-        parser      = [[AgnesParser alloc] initWithConnection:self];
         userDict    = [[NSMutableDictionary alloc] init];
         channelDict = [[NSMutableDictionary alloc] init];
         thisUser    = [[AgnesUser alloc] init];
@@ -96,7 +95,7 @@ int cuid = 0, csid = 0;
         [delegate onRawLine:self line:line];
     
     // parse it with Parser.
-    [parser parseLine:line];
+    [AgnesParser parseLine:line connection:self];
 }
 
 - (void)onSSLHandshakeComplete {
