@@ -17,22 +17,24 @@
 
 @implementation AgnesConnection
 
-@synthesize identifier, session, ssl, manager, delegate, nickname, username, realname,
+@synthesize session, ssl, manager, delegate, nickname, username, realname,
             thisUser, serverSupport, serverName;
+
+- (NSUInteger)identifier {
+    return [self hash];
+}
 
 - (id)initWithDelegate:(id<AgnesConnectionDelegate>)del {
     self = [super init];
     if (self) {
-        identifier  = [self hash];
-        delegate    = del;
-        ssl         = false;
-        socket      = [[AgnesSocket alloc] initWithDelegate:self];
-        userDict    = [[NSMutableDictionary alloc] init];
-        channelDict = [[NSMutableDictionary alloc] init];
-        thisUser    = [[AgnesUser alloc] init];
-        serverSupport = [[NSMutableDictionary alloc] init];
+        delegate            = del;
+        ssl                 = false;
+        socket              = [[AgnesSocket alloc] initWithDelegate:self];
+        userDict            = [[NSMutableDictionary alloc] init];
+        channelDict         = [[NSMutableDictionary alloc] init];
+        thisUser            = [[AgnesUser alloc] init];
+        serverSupport       = [[NSMutableDictionary alloc] init];
         thisUser.connection = self;
-        thisUser.identifier = [thisUser hash];
     }
     NSLog(@"created with socket: %@", socket);
     return self;
@@ -129,7 +131,6 @@
     else {
         finalUser = [[AgnesUser alloc] init];
         finalUser.connection = self;
-        finalUser.identifier = [finalUser hash];
         [userDict setObject:finalUser forKey:[nick lowercaseString]];
     }
     // set information from string.
@@ -150,7 +151,6 @@
     else {
         finalChannel = [[AgnesChannel alloc] init];
         finalChannel.connection = self;
-        finalChannel.identifier = [finalChannel hash];
         [channelDict setObject:finalChannel forKey:[name lowercaseString]];
     }
     
@@ -180,7 +180,7 @@
 
 // NSObject description.
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<AgnesConnection: %p (%d)>", self, identifier];
+    return [NSString stringWithFormat:@"<AgnesConnection: %p (%d)>", self, self.identifier];
 }
 
 @end

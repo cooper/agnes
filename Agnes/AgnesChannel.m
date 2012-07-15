@@ -12,7 +12,11 @@
 
 @implementation AgnesChannel
 
-@synthesize identifier, session, connection, name, users;
+@synthesize session, connection, name, users;
+
+- (NSUInteger)identifier {
+    return [self hash];
+}
 
 - (BOOL)hasUser:(AgnesUser *)user {
     if ([users containsObject:user])

@@ -19,7 +19,7 @@
 @property NSString *realname;
 @property NSString *hostname;
 @property NSString *cloak;
-@property NSUInteger identifier;
+@property (readonly) NSUInteger identifier;
 @property id connection;
 @property id session;
 
