@@ -31,7 +31,7 @@
 @property AgnesUser *thisUser;         // from the thisUser AgnesUser property.
 @property NSMutableDictionary *serverSupport;
 @property id session;
-@property int sid;
+@property NSUInteger identifier;
 @property NSString *serverName;
 
 - (id)initWithDelegate:(id)del;

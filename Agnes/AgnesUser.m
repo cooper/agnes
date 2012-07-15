@@ -12,6 +12,10 @@
 
 @implementation AgnesUser
 
-@synthesize session, uid, connection, realname, nickname, username, hostname, cloak;
+@synthesize session, identifier, connection, realname, nickname, username, hostname, cloak;
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<AgnesUser: %p (%ld)>", self, identifier];
+}
 
 @end

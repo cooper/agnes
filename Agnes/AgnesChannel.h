@@ -18,6 +18,7 @@
 @property NSString *name;
 @property (readonly) NSMutableArray *users;
 @property id session;
+@property NSUInteger identifier;
 
 - (BOOL)hasUser:(AgnesUser *)user;
 

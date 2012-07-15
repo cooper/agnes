@@ -17,15 +17,13 @@
 
 @implementation AgnesConnection
 
-@synthesize sid, session, ssl, manager, delegate, nickname, username, realname,
+@synthesize identifier, session, ssl, manager, delegate, nickname, username, realname,
             thisUser, serverSupport, serverName;
-
-int cuid = 0, csid = 0;
 
 - (id)initWithDelegate:(id<AgnesConnectionDelegate>)del {
     self = [super init];
     if (self) {
-        sid         = csid++;
+        identifier  = [self hash];
         delegate    = del;
         ssl         = false;
         socket      = [[AgnesSocket alloc] initWithDelegate:self];
@@ -34,6 +32,7 @@ int cuid = 0, csid = 0;
         thisUser    = [[AgnesUser alloc] init];
         serverSupport = [[NSMutableDictionary alloc] init];
         thisUser.connection = self;
+        thisUser.identifier = [thisUser hash];
     }
     NSLog(@"created with socket: %@", socket);
     return self;
@@ -130,7 +129,7 @@ int cuid = 0, csid = 0;
     else {
         finalUser = [[AgnesUser alloc] init];
         finalUser.connection = self;
-        finalUser.uid = cuid++;
+        finalUser.identifier = [finalUser hash];
         [userDict setObject:finalUser forKey:[nick lowercaseString]];
     }
     // set information from string.
@@ -151,6 +150,7 @@ int cuid = 0, csid = 0;
     else {
         finalChannel = [[AgnesChannel alloc] init];
         finalChannel.connection = self;
+        finalChannel.identifier = [finalChannel hash];
         [channelDict setObject:finalChannel forKey:[name lowercaseString]];
     }
     
@@ -159,14 +159,15 @@ int cuid = 0, csid = 0;
     return finalChannel;
 }
 
-// update the nickname of this connection's user
+// update the nickname of this connection's user.
 - (void)updateNick:(NSString *)oldnick newNick:(NSString *)newnick {
     AgnesUser *user = [userDict objectForKey:[oldnick lowercaseString]];
     [userDict removeObjectForKey:[oldnick lowercaseString]];
     [userDict setObject:user forKey:[newnick lowercaseString]];
 }
 
-// setters and getters for serverName property
+/* setters and getters for serverName property. */
+
 - (void)setServerName:(NSString *)name {
     if ([delegate respondsToSelector:@selector(connection:willChangeServerName:)])
         [delegate connection:self willChangeServerName:name];
@@ -175,6 +176,11 @@ int cuid = 0, csid = 0;
 
 - (NSString *)serverName {
     return serverName;
+}
+
+// NSObject description.
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<AgnesConnection: %p (%d)>", self, identifier];
 }
 
 @end
