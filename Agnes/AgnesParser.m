@@ -11,7 +11,7 @@
 #import "AgnesParser.h"
 #import "AgnesParserCommand.h"
 
-static int currentId = 0;
+static NSUInteger currentId = 0;
 static NSMutableDictionary *commandHandlers;
 
 @implementation AgnesParser
@@ -19,12 +19,12 @@ static NSMutableDictionary *commandHandlers;
 + (void)installDefaults {
     commandHandlers = [[NSMutableDictionary alloc] init];
     NSArray *defaultCommands = [NSArray arrayWithObjects:
+        @"005",     handleISupport,         /* RPL_ISUPPORT  */
         @"376",     handleEndOfMOTD,        /* RPL_ENDOFMOTD */
         @"PRIVMSG", handlePrivmsg,
         @"NICK",    handleNick,
     nil];
-    
-    for (uint i = 0; i != defaultCommands.count; i++) {
+    for (uint8 i = 0; i != defaultCommands.count; i++) {
         NSString *command = [defaultCommands objectAtIndex:i]; i++;
         CommandCallback callback = [defaultCommands objectAtIndex:i];
         [self registerCommandHandler:callback forCommand:command];
@@ -42,7 +42,7 @@ static NSMutableDictionary *commandHandlers;
         events = [[NSMutableArray alloc] init];
         [commandHandlers setObject:events forKey:command];
     }
-
+    
     // register the event.
     int myId = currentId++;
     NSArray *thisEvent = [NSArray arrayWithObjects:[NSNumber numberWithInt:myId], callback, nil];
@@ -77,26 +77,52 @@ static NSMutableDictionary *commandHandlers;
     [self fireEvent:[args objectAtIndex:1] withCmd:cmd];
 }
 
-/* HANDLERS */
 
+/* NUMERIC HANDLERS */
+
+
+// RPL_ISUPPORT
+void (^handleISupport)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
+    uint8 lastIndex = [[cmd arguments] count] - 1;
+    for (uint8 i = 0; i < lastIndex; i++) {
+        if (i < 3) continue;
+        NSString *item = [cmd nth:i];
+        
+        // key=value
+        if ([item rangeOfString:@"="].location != NSNotFound) {
+            NSArray *components = [item componentsSeparatedByString:@"="];
+            NSString *key   = [components objectAtIndex:0];
+            NSString *value = [components objectAtIndex:1];
+            [cmd.connection.serverSupport setObject:value forKey:key];
+            
+            // set server name
+            if ([key isEqualToString:@"NETWORK"])
+                cmd.connection.serverName = value;
+        }
+        
+        // value
+        else
+            [cmd.connection.serverSupport setObject:@"TRUE" forKey:item];
+    }
+};
+
+// RPL_ENDOFMOTD
+void (^handleEndOfMOTD)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
+    [cmd.connection sendLine:@"JOIN #k"];
+};
+
+
+/* COMMAND HANDLERS */
+
+
+// NICK
 void (^handleNick)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
     NSString *oldnick = cmd.user.nickname;
     [cmd.user setNickname:[cmd last]];
     [cmd.connection updateNick:oldnick newNick:[cmd last]];
 };
 
-void (^handleISupport)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
-    uint8 lastIndex = [[cmd arguments] count] - 1;
-    for (uint8 i = 0; i < lastIndex; i++) {
-        if (i < 3) continue;
-        NSString *item = [cmd nth:i];
-        if ([item rangeOfString:@"="].location == NSNotFound)
-            NSLog(@"no big deal.");
-        else
-            NSLog(@"needs handled.");
-    }
-};
-
+// PRIVMSG
 void (^handlePrivmsg)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
     NSString *msg = [cmd last];
     AgnesConnection *conn = cmd.connection;
@@ -123,11 +149,10 @@ void (^handlePrivmsg)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
         
     if ([[cmd nthReal:3] isEqualToString:@":@setnick"])
         [conn sendLine:[NSString stringWithFormat:@"NICK %@", [cmd nthReal:4]]];
+    
+    if ([[cmd nthReal:3] isEqualToString:@":@isupport"]) [conn sendLine:
+        [NSString stringWithFormat:@"PRIVMSG #k :%@",
+        [cmd.connection.serverSupport objectForKey:[cmd nthReal:4]]]];
 };
-
-void (^handleEndOfMOTD)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
-    [cmd.connection sendLine:@"JOIN #k"];
-};
-
 
 @end

@@ -17,7 +17,8 @@
 
 @implementation AgnesConnection
 
-@synthesize sid, session, ssl, manager, object, delegate, nickname, username, realname, thisUser;
+@synthesize sid, session, ssl, manager, delegate, nickname, username, realname,
+            thisUser, serverSupport, serverName;
 
 int cuid = 0, csid = 0;
 
@@ -31,8 +32,10 @@ int cuid = 0, csid = 0;
         userDict    = [[NSMutableDictionary alloc] init];
         channelDict = [[NSMutableDictionary alloc] init];
         thisUser    = [[AgnesUser alloc] init];
+        serverSupport = [[NSMutableDictionary alloc] init];
         thisUser.connection = self;
     }
+    NSLog(@"created with socket: %@", socket);
     return self;
 }
 
@@ -71,36 +74,36 @@ int cuid = 0, csid = 0;
 }
 
 - (void)setAddress:(NSString *)address {
-    socket.address = address;
+    socket.address = serverName = address;
 }
 
 /* messages sent by AgnesSocket. */
 
 - (void)onConnectionEstablished {
-    if ([delegate respondsToSelector:@selector(onConnectionEstablished:)])
-        [delegate onConnectionEstablished:self];
+    if ([delegate respondsToSelector:@selector(connectionDidConnect:)])
+        [delegate connectionDidConnect:self];
     [manager createConnectionSession:self];
 }
 
 - (void)onConnectionError:(NSError *)error {
-    if ([delegate respondsToSelector:@selector(onConnectionError:error:)])
-        [delegate onConnectionError:self error:error];
+    if ([delegate respondsToSelector:@selector(connection:didFailConnectWithError:)])
+        [delegate connection:self didFailConnectWithError:error];
     [manager showConnectionError:self error:error];
 }
 
 - (void)onRawLine:(NSString *)line {
     
     // pass on the raw event to the delegate.
-    if ([delegate respondsToSelector:@selector(onRawLine:line:)])
-        [delegate onRawLine:self line:line];
+    if ([delegate respondsToSelector:@selector(connection:didReceiveLine:)])
+        [delegate connection:self didReceiveLine:line];
     
     // parse it with Parser.
     [AgnesParser parseLine:line connection:self];
 }
 
 - (void)onSSLHandshakeComplete {
-    if ([delegate respondsToSelector:@selector(onSSLHandshakeComplete:)])
-        [delegate onSSLHandshakeComplete:self];
+    if ([delegate respondsToSelector:@selector(connectionDidCompleteHandshake:)])
+        [delegate connectionDidCompleteHandshake:self];
 }
 
 /* end messages by agnessocket */
@@ -138,8 +141,8 @@ int cuid = 0, csid = 0;
     return finalUser;
 }
 
+// lookup or create a channel by its name.
 - (AgnesChannel *)channelFromName:(NSString *)name {
-
     // look for an existing channel instance.
     AgnesChannel *foundChannel = [channelDict objectForKey:[name lowercaseString]];
     AgnesChannel *finalChannel;
@@ -156,10 +159,22 @@ int cuid = 0, csid = 0;
     return finalChannel;
 }
 
+// update the nickname of this connection's user
 - (void)updateNick:(NSString *)oldnick newNick:(NSString *)newnick {
     AgnesUser *user = [userDict objectForKey:[oldnick lowercaseString]];
     [userDict removeObjectForKey:[oldnick lowercaseString]];
     [userDict setObject:user forKey:[newnick lowercaseString]];
+}
+
+// setters and getters for serverName property
+- (void)setServerName:(NSString *)name {
+    if ([delegate respondsToSelector:@selector(connection:willChangeServerName:)])
+        [delegate connection:self willChangeServerName:name];
+    serverName = name;
+}
+
+- (NSString *)serverName {
+    return serverName;
 }
 
 @end

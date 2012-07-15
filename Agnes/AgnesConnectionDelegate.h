@@ -20,9 +20,10 @@
 
 @optional
 
-- (void)onConnectionEstablished:(AgnesConnection *)connection;
-- (void)onConnectionError:(AgnesConnection *)connection error:(NSError *)err;
-- (void)onSSLHandshakeComplete:(AgnesConnection *)connection;
-- (void)onRawLine:(AgnesConnection *)connection line:(NSString *)line;
+- (void)connectionDidConnect:(AgnesConnection *)connection;
+- (void)connectionDidCompleteHandshake:(AgnesConnection *)connection;
+- (void)connection:(AgnesConnection *)connection didFailConnectWithError:(NSError *)err;
+- (void)connection:(AgnesConnection *)connection didReceiveLine:(NSString *)line;
+- (void)connection:(AgnesConnection *)connection willChangeServerName:(NSString *)name;
 
 @end

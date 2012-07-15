@@ -33,7 +33,9 @@
 }
 
 - (void)connect:(BOOL)ssl {
-	[socket connectToHost:address onPort:port error:nil];
+    NSError *error;
+	[socket connectToHost:address onPort:port error:&error];
+    if (error) NSLog(@"error connecting: %@", error);
     if (ssl) [socket startTLS:nil];
 }
 
