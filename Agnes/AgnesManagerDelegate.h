@@ -5,7 +5,7 @@
 //  Created by Mitchell Cooper on 7/8/12.
 //  Copyright (c) 2012 mac-mini.org. All rights reserved.
 //
-// Documentation: https://github.com/cooper/mixtape/wiki/AgnesManager-and-delegate
+// Documentation: https://github.com/cooper/mixtape/wiki/AgnesManager
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,7 @@
 
 @optional
 
-- (void)createConnectionSession:(AgnesManager *)manager connection:(AgnesConnection *)conn;
-- (void)showConnectionError:(AgnesManager *)manager connection:(AgnesConnection *)conn error:(NSError *)err;
+- (void)manager:(AgnesManager *)manager shouldCreateSessionForConnection:(AgnesConnection *)connection;
+- (void)manager:(AgnesManager *)manager shouldShowError:(NSError *)error forConnection:(AgnesConnection *)connection;
 
 @end

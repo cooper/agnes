@@ -58,16 +58,16 @@ int cId = 0;
     conn.manager = self;
 }
 
-// sent by the connection.
+/* sent by the connection. */
 
 - (void)createConnectionSession:(AgnesConnection *)conn {
-    if ([delegate respondsToSelector:@selector(createConnectionSession:connection:)])
-        [delegate createConnectionSession:self connection:conn];
+    if ([delegate respondsToSelector:@selector(manager:shouldCreateSessionForConnection:)])
+        [delegate manager:self shouldCreateSessionForConnection:conn];
 }
 
 - (void)showConnectionError:(AgnesConnection *)conn error:(NSError *)err {
-    if ([delegate respondsToSelector:@selector(showConnectionError:connection:error:)])
-        [delegate showConnectionError:self connection:conn error:err];
+    if ([delegate respondsToSelector:@selector(manager:shouldShowError:forConnection:)])
+        [delegate manager:self shouldShowError:err forConnection:conn];
 }
 
 @end
