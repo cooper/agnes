@@ -19,8 +19,9 @@ static NSMutableDictionary *commandHandlers;
 + (void)installDefaults {
     commandHandlers = [[NSMutableDictionary alloc] init];
     NSArray *defaultCommands = [NSArray arrayWithObjects:
-        @"005",     handleISupport,         /* RPL_ISUPPORT  */
-        @"376",     handleEndOfMOTD,        /* RPL_ENDOFMOTD */
+        @"005",     handleISupport,         /* RPL_ISUPPORT   */
+        @"376",     handleEndOfMOTD,        /* RPL_ENDOFMOTD  */
+        @"396",     handleHostHidden,       /* RPL_HOSTHIDDEN */
         @"PRIVMSG", handlePrivmsg,
         @"NICK",    handleNick,
     nil];
@@ -111,6 +112,10 @@ void (^handleEndOfMOTD)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
     [cmd.connection sendLine:@"JOIN #k"];
 };
 
+// RPL_HOSTHIDDEN
+void (^handleHostHidden)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
+    [cmd.connection.thisUser setCloak:[cmd nth:3]];
+};
 
 /* COMMAND HANDLERS */
 
@@ -145,7 +150,7 @@ void (^handlePrivmsg)(AgnesParserCommand *) = ^(AgnesParserCommand *cmd) {
         [NSString stringWithFormat:
         @"PRIVMSG #k :user = %@, connection = %@, nick = %@, ident = %@, cloak = %@",
         conn.thisUser, conn.thisUser.connection, conn.thisUser.nickname,
-        conn.thisUser.username, cmd.user.cloak]];
+        conn.thisUser.username, conn.thisUser.cloak]];
         
     if ([[cmd nthReal:3] isEqualToString:@":@setnick"])
         [conn sendLine:[NSString stringWithFormat:@"NICK %@", [cmd nthReal:4]]];

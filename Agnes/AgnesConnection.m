@@ -180,7 +180,7 @@
 
 // NSObject description.
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<AgnesConnection: %p (%d)>", self, self.identifier];
+    return [NSString stringWithFormat:@"<AgnesConnection: %p (%ld)>", self, self.identifier];
 }
 
 @end
